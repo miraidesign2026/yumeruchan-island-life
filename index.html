@@ -18,7 +18,7 @@ main{max-width:650px;margin:auto;padding:12px 17px}
 h2{font-size:18px;color:#267f68;margin:24px 3px 12px}
 .info{background:#ffffffd9;border-radius:18px;padding:16px;font-size:14px;line-height:1.7}
 nav{position:fixed;bottom:0;left:0;right:0;background:#fffaffed;display:flex;justify-content:space-around;padding:12px 4px max(12px,env(safe-area-inset-bottom));border-top:1px solid #f0e6f0}
-nav span{font-size:11px;color:#269b79;text-align:center}
+nav button{flex:1;border:0;background:transparent;font-family:inherit;font-size:11px;color:#269b79;text-align:center;cursor:pointer;padding:0;line-height:1.5}
 .chat-launch{position:fixed;right:15px;bottom:94px;z-index:5;border:0;border-radius:30px;background:#269b79;color:white;padding:10px 15px;font-weight:bold;box-shadow:0 5px 16px #246d5540}
 .chat-launch img{width:34px;height:34px;object-fit:cover;border-radius:50%;vertical-align:middle;margin-right:7px;background:white;clip-path:inset(0 0 0 1.2%)}
 .chat-panel{display:none;position:fixed;z-index:6;right:10px;bottom:150px;width:min(360px,calc(100vw - 20px));height:min(480px,65vh);background:white;border:1px solid #cde9df;border-radius:22px;box-shadow:0 12px 35px #244f4038;overflow:hidden;flex-direction:column}
@@ -68,7 +68,7 @@ nav span{font-size:11px;color:#269b79;text-align:center}
 <div class="note">※102件の登録データから自動回答します。生成AIには接続していません。</div>
 </section>
 <div class="prototype-overlay" id="prototypeOverlay" role="dialog" aria-modal="true" aria-label="試作版のご案内" onclick="if(event.target===this)closePrototypeNotice()"><div class="prototype-dialog"><div class="flower">🌸</div><p>試作版のため、<br>まだ表示できません。<br>ごめんなさい！</p><button id="closePrototype" onclick="closePrototypeNotice()">閉じる</button></div></div>
-<nav><span>🏠<br>ホーム</span><span>⛩️<br>観光</span><span>📍<br>マップ</span><span>📸<br>アルバム</span><span>🍡<br>グルメ</span></nav>
+<nav aria-label="下部メニュー"><button type="button" onclick="showPrototypeNotice()">🏠<br>ホーム</button><button type="button" onclick="showPrototypeNotice()">⛩️<br>観光</button><button type="button" onclick="showPrototypeNotice()">📍<br>マップ</button><button type="button" onclick="showPrototypeNotice()">📸<br>アルバム</button><button type="button" onclick="showPrototypeNotice()">🍡<br>グルメ</button></nav>
 <script>
 function showPrototypeNotice(){document.getElementById('prototypeOverlay').classList.add('open');document.getElementById('closePrototype').focus()}
 function closePrototypeNotice(){document.getElementById('prototypeOverlay').classList.remove('open')}
